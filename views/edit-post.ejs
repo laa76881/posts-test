@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+       Edit post
+    </title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+        <h1>Home page</h1>
+
+        <form method="post" action="/edit-post/<%= post.id %>?_method=PUT" class="form">
+            <h2>Edit post!</h2>
+
+            <div class="row">
+                <b>Title:</b>
+                <input type="text" name="title" value="<%= post.title %>">
+            </div>
+
+            <div class="row">
+                <b>Author:</b>
+                <input type="text" name="author" value="<%= post.author %>">
+            </div>
+
+            <div class="row">
+            <b>Info:</b>
+                <textarea type="text" name="text">
+                    <%= post.text %>
+                </textarea>
+            </div>
+
+            <button type="submit" class="submit">Submit</button>
+        </form>
+
+        <script>
+            const textarea = document.getElementsByTagName('textarea')[0]
+            // textarea.value = 
+            // console.log('check', textarea, post)
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+        <h1>Home page</h1>
+
+        <form method="post" action="/add-post" class="form">
+            <h2>Create new post!</h2>
+
+            <div class="row">
+                <b>Title:</b>
+                <input type="text" name="title">
+            </div>
+
+            <div class="row">
+                <b>Author:</b>
+                <input type="text" name="author">
+            </div>
+
+            <div class="row">
+            <b>Info:</b>
+                <textarea type="text" name="text"></textarea>
+            </div>
+
+            <button type="submit" class="submit">Submit</button>
+        </form>
+</body>
+
+</html>

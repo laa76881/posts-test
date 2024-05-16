@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+        <h1>Users page</h1>
+        <div class="users">
+            <% if (users?.length) { %>
+                <% users.forEach(({ _id, name, age, info, link })=> { %>
+                    <div class="post">
+                        <p><b>Id:</b>
+                            <%= _id %>
+                        </p>
+                        <p class="mt-10"><b>Name:</b>
+                            <%= name %>
+                        </p>
+                        <p class="mt-10"><b>Age:</b>
+                            <%= age %>
+                        </p>
+                        <p class="mt-10"><b>Info:</b>
+                            <%= info %>
+                        </p>
+                        <p class="mt-10"><b>Website link:</b>
+                            <a href="<%= link %>" target="_blank">
+                                <%= link %>
+                            </a>
+                        </p>
+
+                        <p style="margin-top: 20px;">
+                            <a href="/users/<%= _id %>">
+                                More
+                            </a>
+                        </p>
+                    </div>
+                    <% }) %>
+                        <% } %>
+        </div>
+</body>
+
+</html>

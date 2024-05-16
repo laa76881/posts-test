@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> <%= title %> </title>
+</head>
+
+<body>
+    <h1>Some user - <%= user?.name %>
+    </h1>
+    <p class="mt-10"><b>Age:</b>
+        <%= user?.age %>
+    </p>
+    <% if (user?.info) { %>
+        <p class="mt-10"><b>Info:</b>
+            <%= user?.info %>
+        </p>
+    <% } %>
+            <p class="mt-10"><b>Website link:</b>
+                <a href="<%= user?.link %>" target="_blank">
+                    <%= user?.link %>
+                </a>
+            </p>
+</body>
+
+</html>
