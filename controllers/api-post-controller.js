@@ -13,6 +13,14 @@ const getPosts = ((req, res) => {
         .catch((error) => handleError(res, error))
 })
 
+const getPostById = ((req, res) => {
+    Post
+        .findById(req.params.id)
+        .then((post) => res.status(200).json(post))
+        .catch((error) => handleError(res, error))
+})
+
 module.exports = {
-    getPosts
+    getPosts,
+    getPostById
 }
