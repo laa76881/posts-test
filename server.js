@@ -13,6 +13,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use(methodOverride('_method'))
 app.use(cors());
+console.log('yes')
 
 const apiPostRoutes = require('./routes/api-posts-route')
 
